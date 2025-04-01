@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MenuComponent } from "./components/menu/menu.component";
+import{ ProfileImgComponent }from "./components/profile-img/profile-img.component"
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MenuComponent, ProfileImgComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

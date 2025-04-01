@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#121212 ;  
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 5px 2%;
+}
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        gap: 40px;
+        flex-direction: column-reverse;
+    }
+    .content {
+        margin-top: 40px;
+        height: auto; 
+        gap: 30px; 
+        
+    }
+    .container__body{
+        display: flex;
+        flex-direction: column;
+        gap: 280px;
+       
+    }
+}
+@media (min-width: 1920px) {
+
+    .content { 
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        margin-bottom: 110px;
+    }
+   
+}

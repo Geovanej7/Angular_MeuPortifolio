@@ -1,0 +1,17 @@
+<div class="container__menu-bar">
+  
+    <div class="menu-hamburger" (click)="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  
+    <ul [ngClass]="{'show': isMenuOpen}">
+      <button class="close__menu" (click)="toggleMenu()">X</button>
+      <li><a [routerLink]="['/']">Home</a></li>
+      <li><a [routerLink]="['/sobre']">Sobre</a></li>
+      <li><a [routerLink]="['/projetos']">Projetos</a></li>
+      <li><a [routerLink]="['/contato']">Contato</a></li>
+    </ul>
+  
+  </div>
