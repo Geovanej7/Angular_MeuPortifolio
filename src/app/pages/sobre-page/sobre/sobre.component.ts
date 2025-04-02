@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './sobre.component.html',
-  styleUrl: './sobre.component.css'
+  styleUrls: ['./sobre.component.css', 'sobre.mobile.component.css', 'sobre.ultra.component.css']
 })
 export class SobreComponent {
 
