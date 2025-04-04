@@ -1,7 +1,7 @@
 .container__footer{
-    padding: 25px;
-    background-color: #1E1E1E;
-    margin-top: 85px;
+    padding: 45px;
+    background: linear-gradient(to bottom, #121212 0%, #121212 15%, #222222 100%);
+    
 }
 
 .container__footer > ul{
@@ -9,13 +9,14 @@
     justify-content: center;
     align-items: center; 
     gap: 100px;
-    background-color: #1E1E1E;
+    background-color: transparent;
     padding: 10px; 
 }
 .container__footer > ul > li{
    font-weight: bold;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    list-style: none;
+   background-color: transparent;
 }
 .container__footer > ul > li > a {
     background-color: #1E1E1E;
@@ -24,6 +25,7 @@
     font-size: 20px;
     position: relative;
     padding: 5px 0;
+    background-color: transparent;
 }
 .container__footer ul > li > a::after {
     content: "";
