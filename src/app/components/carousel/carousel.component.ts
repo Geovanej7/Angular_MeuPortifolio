@@ -7,7 +7,7 @@ import { CardComponent } from '../card/card.component'
   standalone: true,
   imports: [CommonModule, CardComponent],
   templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.css'
+  styleUrls: ['./carousel.component.css','carousel.mobile.component.css']
 })
 export class CarouselComponent {
 

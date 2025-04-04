@@ -47,20 +47,4 @@
     background:  #3b82f6;;
   }
 
-  @media (max-width: 768px){
-    .carousel-container {
-      margin-top: 40px;
-      width: 300px;
-    }
-    .carousel {
-      display: none; /* Esconde o carousel normal */
-    }
   
-    .carousel__mobile {
-      display: flex; /* Mostra o carousel mobile */
-    }
-
-    .indicators {
-      margin-top: 30px;
-    }
-  }
