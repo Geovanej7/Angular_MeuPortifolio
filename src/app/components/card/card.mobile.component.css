@@ -1,0 +1,14 @@
+@media (max-width: 768px){
+    .container__card{
+        width: 200px;
+        height: 300px;
+        margin-top: 10px;
+        gap: 20px;
+    }
+    .container__card > h1{
+        font-size: 30px;
+    }
+    .container__card > p{
+        font-size: 15px;
+    }
+}

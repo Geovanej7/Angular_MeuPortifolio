@@ -10,6 +10,22 @@
     gap: 20px;
     transition: transform 2.0s ease-in-out;
     margin-left: 5px;
+    transform: translateX(calc(var(--index) * -1 * var(--card-width)));
+  }
+
+  .carousel__mobile {
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    transition: transform 2.0s ease-in-out;
+    margin-left: 50px;
+    transform: translateX(calc(var(--index) * -1 * var(--card-width)));
+
+  }
+  .carousel__mobile {
+    display: none; 
   }
   
   .indicators {
@@ -29,4 +45,22 @@
   
   .active {
     background:  #3b82f6;;
+  }
+
+  @media (max-width: 768px){
+    .carousel-container {
+      margin-top: 40px;
+      width: 300px;
+    }
+    .carousel {
+      display: none; /* Esconde o carousel normal */
+    }
+  
+    .carousel__mobile {
+      display: flex; /* Mostra o carousel mobile */
+    }
+
+    .indicators {
+      margin-top: 30px;
+    }
   }
