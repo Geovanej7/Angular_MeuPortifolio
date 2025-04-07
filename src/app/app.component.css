@@ -20,7 +20,7 @@ header{
 @media (max-width: 768px) {
     header {
         display: flex;
-        gap: 40px;
+        gap: 20px;
         flex-direction: column-reverse;
     }
     .content {
