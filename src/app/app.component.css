@@ -8,6 +8,10 @@ main {
     flex: 1; 
     padding: 20px;
     overflow: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header{
@@ -16,6 +20,7 @@ header{
     justify-content: space-between; 
     padding: 5px 2%;
 }
+
 
 @media (max-width: 768px) {
     header {

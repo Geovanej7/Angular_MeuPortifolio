@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './profile-img.component.html',
-  styleUrl: './profile-img.component.css'
+  styleUrls:['./profile-img.component.css','./profile-img.mobile.component.css'] 
 })
 export class ProfileImgComponent {
 

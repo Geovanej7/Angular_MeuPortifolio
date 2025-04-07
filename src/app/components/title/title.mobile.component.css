@@ -2,10 +2,13 @@
 @media (max-width: 768px) {
     
     .container__title > h1 {
-        font-size: 2rem;
+        font-size: 43px;
     }
     .container__title > span{
-        font-size: 0.6rem;
+        font-size: 12px;
+    }
+    .container__title {
+        margin-bottom: 10px;
     }
     
 }

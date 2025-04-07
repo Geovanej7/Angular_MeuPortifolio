@@ -1,7 +1,7 @@
 @media (max-width: 768px){
     .carousel-container {
       margin-top: 20px;
-      width: 300px;
+      width: 350px;
     }
     .carousel {
       display: none; /* Esconde o carousel normal */
