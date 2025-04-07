@@ -11,7 +11,13 @@ import { CardComponent } from '../card/card.component'
 })
 export class CarouselComponent {
 
-  cards = ['APi board de tarefas', 'Card 2', 'Card 3', 'Card 4', 'Card 5'];
+  cards = [
+    { title: 'board de tarefas', link: 'https://github.com/Geovanej7/boards' , description: 'Uma aplicação inspirada nas aulas de integração de sistemas com bancos de dados, do bootcamp DecolaTech 2025, desenvolvida com Java , que permite gerenciar um board de tarefas.'},
+    { title: 'Meu Blog', link: 'https://github.com/Geovanej7/angular-blog', description: 'Este é um espaço onde compartilho minha trajetória na área da tecnologia. Aqui, você encontrará meus certificados de cursos, bootcamps e formações.' },
+    { title: 'Oxefood', link: 'https://github.com/Geovanej7/oxefood-api-geovane', description: 'Projeto desenvolvido durante as aulas de Web III no IFPE – Campus Jaboatão. Trata-se de uma API RESTful construída em Java, que simula as funcionalidades básicas de um e-commerce.' },
+    { title: 'Catalogo Online', link: 'https://github.com/Geovanej7/React-Catalogo', description: 'Aplicação web desenvolvida com foco em acessibilidade e usabilidade, onde qualquer pessoa pode criar um catálogo virtual para expor seus produtos na internet.' },
+    { title: 'Em Breve', link: 'https://meu-projeto.com/card5', description: '...' }
+  ];
   index = 0;
   cardsPerView = 2; // Padrão para desktop
   totalSlides = 0;

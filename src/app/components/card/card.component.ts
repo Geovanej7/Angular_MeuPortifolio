@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.css','card.mobile.component.css','card.ultra.component.css']
 })
 export class CardComponent {
-  @Input() data!: string;
+  @Input() data!: { title: string; link: string ; description: string };
 }
