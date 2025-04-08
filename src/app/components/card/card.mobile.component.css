@@ -12,3 +12,11 @@
         font-size: 15px;
     }
 }
+@media (max-width: 414px), (max-width: 360px){
+    .container__card{
+        width: 250px;
+        height: 340px;
+        margin-top: 5px;
+        gap: 20px;
+    }
+  }

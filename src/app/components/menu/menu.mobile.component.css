@@ -19,6 +19,23 @@
       border-radius: 5px;
     }
 
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    .menu-hamburger {
+      animation: pulse 2.5s infinite;
+    }
+    
+
     .container__menu-bar{
       margin-right: 75px;
     }
@@ -81,4 +98,10 @@
       color: rgba(255, 0, 0, 0.671);
     }
 
+}
+@media (max-width: 359px),(max-width: 379px){
+  .menu-hamburger {
+    margin-top: 10px;
+    margin-right: 35vh;
+  } 
 }

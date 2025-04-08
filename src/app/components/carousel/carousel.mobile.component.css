@@ -15,3 +15,14 @@
       margin-top: 30px;
     }
   }
+
+  @media (max-width: 414px), (max-width: 360px) {
+    
+    .carousel-container {
+      margin-top: 20px;
+      width: 335px;
+    }
+   
+  }
+  
+
