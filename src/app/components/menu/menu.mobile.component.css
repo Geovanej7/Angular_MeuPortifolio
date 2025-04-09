@@ -44,7 +44,7 @@
       display: none; 
       width: 60%; 
       flex-direction: column; 
-      gap: 40px;
+      gap: 80px;
       background-color:#1E1E1E; 
       position: fixed; 
       top: 0;
@@ -76,6 +76,7 @@
      
     .container__menu-bar ul > li > a {
       background-color: #1E1E1E;
+      font-size: 30px;
     }
   
     .menu-hamburger {
@@ -104,4 +105,8 @@
     margin-top: 10px;
     margin-right: 35vh;
   } 
+  .container__menu-bar ul > li > a {
+    background-color: #1E1E1E;
+    font-size: 22px;
+  }
 }

@@ -27,7 +27,7 @@ export class CarouselComponent {
   }
 
   ngOnInit() {
-    setInterval(() => this.nextSlide(), 3000);
+    setInterval(() => this.nextSlide(), 6000);
     this.updateSlides(); // Garante que o primeiro cálculo ocorra
   }
 
