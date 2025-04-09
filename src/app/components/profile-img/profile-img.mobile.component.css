@@ -16,9 +16,11 @@
         cursor: pointer;
         border: 0.5px solid rgba(0, 123, 255, 0.5);
         animation: glow-border 3.5s infinite ease-in-out;
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
-    
+    .container__img {
+        height: 185px;
+    }
     
 }
