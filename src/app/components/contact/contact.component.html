@@ -1,0 +1,8 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="formulario-contato">
+
+    <input type="email" placeholder="Seu email" formControlName="email" class="input-campo" />
+    <input type="text" placeholder="Assunto" formControlName="assunto" class="input-campo" />
+    <textarea placeholder="Sua mensagem" formControlName="mensagem" class="textarea-campo"></textarea>
+    <button type="submit" [disabled]="contactForm.invalid" class="botao-enviar">Enviar</button>
+    
+  </form>

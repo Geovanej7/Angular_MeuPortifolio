@@ -1,0 +1,54 @@
+body {
+    background-color: #121212; /* escuro */
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  .formulario-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  
+  .input-campo,
+  .textarea-campo {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #3b82f6; /* azul */
+    color: white;
+    padding: 8px 4px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .textarea-campo {
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    resize: none;
+    height: 120px;
+    padding: 8px;
+  }
+  
+  .input-campo::placeholder,
+  .textarea-campo::placeholder {
+    color: #aaa;
+  }
+  
+  .botao-enviar {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 9999px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .botao-enviar:hover {
+    opacity: 0.9;
+  }
+  

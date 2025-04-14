@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from "./components/menu/menu.component";
 import{ ProfileImgComponent }from "./components/profile-img/profile-img.component"
 import{ FooterComponent }from "./components/footer/footer.component"
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MenuComponent, ProfileImgComponent,FooterComponent],
+  imports: [RouterOutlet, MenuComponent, ProfileImgComponent,FooterComponent,HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
