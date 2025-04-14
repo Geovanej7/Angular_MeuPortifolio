@@ -9,7 +9,7 @@ import { ContatoService } from '../../services/contact.service'
   standalone: true,
   imports: [ReactiveFormsModule,HttpClientModule ],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css','./contact.mobile.component.css' ]
 })
 export class ContactComponent {
 

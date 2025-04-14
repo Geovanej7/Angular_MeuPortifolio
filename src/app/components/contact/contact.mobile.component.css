@@ -1,5 +1,7 @@
   
-  .formulario-contato {
+  @media (max-width: 768px){
+
+ .formulario-contato {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -18,7 +20,7 @@
     padding: 8px 4px;
     font-size: 16px;
     outline: none;
-    width: 600px;
+    width: 300px;
   }
   
   .textarea-campo {
@@ -29,25 +31,34 @@
     padding: 8px;
   }
   
-  .input-campo::placeholder,
-  .textarea-campo::placeholder {
-    color: #aaa;
+  .botao-enviar {
+    width: 300px;
+  }
+  
+  @media  (max-width: 360px){
+    .input-campo,
+  .textarea-campo {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #3b82f6; 
+    color: white;
+    padding: 8px 4px;
+    font-size: 16px;
+    outline: none;
+    width: 250px;
+  }
+  
+  .textarea-campo {
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    resize: none;
+    height: 160px;
+    padding: 8px;
   }
   
   .botao-enviar {
-    background: linear-gradient(to right, #3b82f6, #2563eb);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 9999px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    margin-top: 5px;
-    width: 600px;
-  }
-  
-  .botao-enviar:hover {
-    opacity: 0.9;
-  }
-  
+    width: 250px;
+    
+   }
+ } 
+}
