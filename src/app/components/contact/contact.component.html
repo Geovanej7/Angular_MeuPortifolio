@@ -1,8 +1,41 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="formulario-contato">
+<!-- Loader -->
+<div *ngIf="isSending" class="loader"></div>
 
-    <input type="email" placeholder="Seu email" formControlName="email" class="input-campo" />
-    <input type="text" placeholder="Assunto" formControlName="assunto" class="input-campo" />
-    <textarea placeholder="Sua mensagem" formControlName="mensagem" class="textarea-campo"></textarea>
-    <button type="submit" [disabled]="contactForm.invalid" class="botao-enviar">Enviar</button>
-    
-  </form>
+<!-- Formulário -->
+<form
+  *ngIf="!isSending && showForm"
+  [formGroup]="contactForm"
+  (ngSubmit)="onSubmit()"
+  class="formulario-contato"
+>
+  <!-- Email -->
+  <input type="email" placeholder="Seu email" formControlName="email" class="input-campo" />
+  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="mensagem-erro">
+    <span *ngIf="email.errors?.['required']">O email é obrigatório.</span>
+    <span *ngIf="email.errors?.['email']">Digite um email válido.</span>
+  </div>
+
+  <!-- Assunto -->
+  <input type="text" placeholder="Assunto" formControlName="assunto" class="input-campo" />
+  <div *ngIf="assunto.invalid && (assunto.dirty || assunto.touched)" class="mensagem-erro">
+    <span *ngIf="assunto.errors?.['required']">O assunto é obrigatório.</span>
+  </div>
+
+  <!-- Mensagem -->
+  <textarea placeholder="Sua mensagem" formControlName="mensagem" class="textarea-campo"></textarea>
+  <div *ngIf="mensagem.invalid && (mensagem.dirty || mensagem.touched)" class="mensagem-erro">
+    <span *ngIf="mensagem.errors?.['required']">A mensagem é obrigatória.</span>
+    <span *ngIf="mensagem.errors?.['minlength']">A mensagem deve ter no mínimo 10 caracteres.</span>
+  </div>
+
+  <button type="submit" [disabled]="contactForm.invalid || !canResend" class="botao-enviar">
+    {{ canResend ? 'Enviar' : 'Aguarde 5 minutos para enviar outra mensagem' }}
+  </button>
+</form>
+
+<!-- Mensagem de sucesso e contador -->
+<div *ngIf="!showForm && !isSending && !canResend" class="mensagem-aguarde">
+  <div class="mensagem-sucesso"><h1>Mensagem enviada com sucesso!</h1></div>
+  <p>Para enviar outra mensagem aguarde um pouco</p>
+  <div class="contador">{{ formatTime(countdown) }}</div>
+</div>

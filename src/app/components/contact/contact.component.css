@@ -51,3 +51,61 @@
     opacity: 0.9;
   }
   
+  .loader {
+    border: 6px solid #ccc;
+    border-top: 6px solid #3b82f6;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: girar 1s linear infinite;
+    margin: 40px auto;
+  }
+  
+  @keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .mensagem-sucesso {
+    color: #3b82f6;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 12px;
+  }
+  
+  .formulario-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  .mensagem-aguarde {
+    color: #A1A1A1 ;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 12px;
+  }
+  
+  .contador {
+    font-size: 24px;
+    color: #A1A1A1 ;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+  }
+
+  .mensagem-erro {
+    color: #f87171; /* vermelho claro */
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+    width: 600px;
+    margin-left: 10px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  

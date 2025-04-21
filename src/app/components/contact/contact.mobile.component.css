@@ -1,6 +1,10 @@
   
   @media (max-width: 768px){
 
+    .mensagem-sucesso {
+      font-size: 18px;
+     
+    }
  .formulario-contato {
     display: flex;
     align-items: center;
