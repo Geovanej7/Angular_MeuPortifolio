@@ -5,6 +5,11 @@
       font-size: 18px;
      
     }
+
+    .mensagem-erro {
+      width: 300px;
+    }
+    
  .formulario-contato {
     display: flex;
     align-items: center;

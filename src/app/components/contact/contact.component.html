@@ -28,8 +28,9 @@
     <span *ngIf="mensagem.errors?.['minlength']">A mensagem deve ter no mínimo 10 caracteres.</span>
   </div>
 
-  <button type="submit" [disabled]="contactForm.invalid || !canResend" class="botao-enviar">
-    {{ canResend ? 'Enviar' : 'Aguarde 5 minutos para enviar outra mensagem' }}
+  <!-- botão -->
+  <button type="submit"  class="botao-enviar">
+    Enviar
   </button>
 </form>
 
