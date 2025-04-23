@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css', './contact.mobile.component.css']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
 
   contactForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -30,6 +30,22 @@ export class ContactComponent {
 
   constructor(private contactService: ContatoService) {}
 
+  ngOnInit(): void {
+    const lastSent = localStorage.getItem('lastSentTime');
+    if (lastSent) {
+      const now = new Date().getTime();
+      const elapsed = Math.floor((now - parseInt(lastSent)) / 1000);
+      const remaining = 300 - elapsed;
+
+      if (remaining > 0) {
+        this.canResend = false;
+        this.countdown = remaining;
+        this.showForm = false;
+        this.startCountdown();
+      }
+    }
+  }
+
   formatTime(seconds: number): string {
     const min = Math.floor(seconds / 60).toString().padStart(2, '0');
     const sec = (seconds % 60).toString().padStart(2, '0');
@@ -45,6 +61,7 @@ export class ContactComponent {
         this.successMessage = '';
         this.showForm = true;
         this.countdown = 300;
+        localStorage.removeItem('lastSentTime');
       }
     }, 1000);
   }
@@ -60,6 +77,10 @@ export class ContactComponent {
           this.successMessage = 'Mensagem enviada com sucesso!';
           this.contactForm.reset();
           this.canResend = false;
+          this.showForm = false;
+
+          const now = new Date().getTime();
+          localStorage.setItem('lastSentTime', now.toString());
 
           this.startCountdown();
         },
