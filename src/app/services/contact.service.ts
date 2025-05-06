@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class ContatoService {
-  private apiUrl = 'http://localhost:8080/api/feedback'; 
+  private apiUrl = 'https://feedback-email.onrender.com/api/feedback'; 
 
   constructor(private http: HttpClient) {}
 
