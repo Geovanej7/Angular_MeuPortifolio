@@ -1,21 +1,20 @@
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
 }
 
 main {
-    flex: 1; 
-    padding: 20px;
-    overflow: auto; 
+    margin-top: 70px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: auto; 
+    display: flex;
 }
 
 header{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between; 
     padding: 5px 2%;
@@ -40,17 +39,34 @@ header{
         gap: 280px;
        
     }
+    main{
+        padding: 10px;
+       
+    }
+    footer {
+        position: fixed;
+        bottom: 0;        /* fixa no rodapé */
+        width: 100%;      /* ocupa toda a largura da tela */
+    }
 }
 @media (min-width: 1920px) {
 
-    .content { 
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-        margin-bottom: 110px;
-    }
+    header {
+    position: fixed;       /* fixa o header na tela */
+    height: 100vh;         /* ocupa toda a altura da tela */
+    width: 200px;          /* largura da barra lateral */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* alinha o conteúdo à esquerda */
+    justify-content: flex-start;
+    padding: 30px;
+    gap: 50px;
+    background: linear-gradient(to bottom, #121212 0%, #131313 10%,#141414 15%, rgba(0, 123, 255, 0.5) 100%);
+   }
+
+   footer{
+    display: none;
+   }
    
 }
   

@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 190px;
+    
 
 }
 
@@ -12,6 +13,7 @@
     display: flex;
     gap: 15px; 
     padding: 0; 
+
 }
 .container__menu-bar > ul > li{
    margin-right: 120px;

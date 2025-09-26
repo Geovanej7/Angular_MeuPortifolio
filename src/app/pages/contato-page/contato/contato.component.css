@@ -1,0 +1,16 @@
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #F5F5F5;
+    font-size: 33px;
+     margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    h1{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}

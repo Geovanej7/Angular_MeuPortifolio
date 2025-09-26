@@ -12,8 +12,8 @@ import { CardComponent } from '../card/card.component'
 export class CarouselComponent {
 
   cards = [
-    { title: 'board de tarefas', link: 'https://github.com/Geovanej7/boards' , description: 'Uma aplicação focada na integração de sistemas com bancos de dados, desenvolvida com Java, que permite gerenciar um board de tarefas.'},
-    { title: 'Meu Blog', link: 'https://github.com/Geovanej7/angular-blog', description: 'Este é o projeto de um blog. Aqui, você encontrará meus certificados de cursos, bootcamps e formações.' },
+    { title: 'board de tarefas', link: 'https://github.com/Geovanej7/boards' , description: 'API Rest de um gerenciador de tarefas.'},
+    { title: 'Medi-App', link: 'https://github.com/Geovanej7/NodeJs-MediApp', description: 'Projeto de agendamento de cunsultas para um consultório médico' },
     { title: 'Oxefood', link: 'https://github.com/Geovanej7/oxefood-api-geovane', description: 'API RESTfull construída em Java, que simula as funcionalidades básicas de um e-commerce.' },
     { title: 'Catalogo Online', link: 'https://github.com/Geovanej7/React-Catalogo', description: 'Aplicação web desenvolvida em react, onde qualquer pessoa pode criar um catálogo virtual para expor seus produtos na internet.' },
     { title: 'Em Breve', link: '', description: '...' }
