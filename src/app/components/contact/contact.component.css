@@ -1,4 +1,12 @@
   
+  .container-form {
+  border: 2px solid #00aaff;  /* cor e espessura */
+  border-radius: 12px;        /* cantos arredondados */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  background: linear-gradient(to bottom, #121212 0%, #131313 10%, #141414 15%, rgba(0, 123, 255, 0.5) 100%);/* opcional, se quiser um fundo */
+}
   .formulario-contato {
     display: flex;
     align-items: center;
@@ -19,7 +27,7 @@
     padding: 8px 4px;
     font-size: 16px;
     outline: none;
-    width: 600px;
+    width: 450px;
   }
   
   .textarea-campo {
@@ -45,7 +53,7 @@
     cursor: pointer;
     transition: opacity 0.3s ease;
     margin-top: 5px;
-    width: 600px;
+    width: 450px;
   }
   
   .botao-enviar:hover {
