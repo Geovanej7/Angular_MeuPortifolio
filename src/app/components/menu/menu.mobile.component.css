@@ -44,8 +44,8 @@
       display: none; 
       width: 60%; 
       flex-direction: column; 
-      gap: 80px;
-      background-color:#1E1E1E; 
+      gap: 50px;
+      background: linear-gradient(to bottom, #121212 0%, #131313 10%, #141414 15%, rgba(0, 123, 255, 0.5) 100%);
       position: fixed; 
       top: 0;
       left: 0;
@@ -69,13 +69,13 @@
 
     .container__menu-bar ul > li {
       margin-left: 50px;
-      background-color: #1E1E1E;  
+      background-color: transparent;  
       font-weight: bold;
     
     }
      
     .container__menu-bar ul > li > a {
-      background-color: #1E1E1E;
+      background-color: transparent;
       font-size: 30px;
     }
   
@@ -106,7 +106,7 @@
     margin-right: 35vh;
   } 
   .container__menu-bar ul > li > a {
-    background-color: #1E1E1E;
+    background-color:  transparent; 
     font-size: 22px;
   }
 }

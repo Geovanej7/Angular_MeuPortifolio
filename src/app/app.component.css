@@ -11,30 +11,43 @@ main {
     display: flex;
 }
 
- header {
-    position: fixed;       /* fixa o header na tela */
-    height: 100vh;         /* ocupa toda a altura da tela */
-    width: 200px;          /* largura da barra lateral */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* alinha o conteúdo à esquerda */
-    justify-content: flex-start;
-    padding: 30px;
-    gap: 50px;
-    background: linear-gradient(to bottom, #121212 0%, #131313 10%,#141414 15%, rgba(0, 123, 255, 0.5) 100%);
-   }
+header {
+  position: fixed;
+  height: 100vh;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 30px;
+  gap: 50px;
+  background: linear-gradient(to bottom, #121212 0%, #131313 10%, #141414 15%, rgba(0, 123, 255, 0.5) 100%);
+  z-index: 1000;
+}
 
-   footer{
+footer{
     display: none;
-   }
+}
 
 
 @media (max-width: 768px) {
     header {
-        display: flex;
-        gap: 20px;
-        flex-direction: column-reverse;
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;         /* altura pequena, só barra */
+    width: 100%;          /* ocupa toda largura */
+    flex-direction: row;  /* logo + menu na horizontal */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    gap: 10px;
+    background: #121212;
+    z-index: 1000;
+  }
+  app-profile-img {
+    display: none;
+  }
     .content {
         margin-top: 40px;
         height: auto; 

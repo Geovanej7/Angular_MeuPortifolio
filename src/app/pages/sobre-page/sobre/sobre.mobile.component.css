@@ -1,40 +1,55 @@
+
+
 @media (max-width: 768px) {
+.sobre-container {
+display: flex;
+flex-direction: column;
+margin-top: 20px;
+}
 
-    h1{
-        font-family: 'Orbitron';
-        color: #F5F5F5;
-        font-size: 40px;
-    }
-    p{
-    
-        font-size: 20px;
-    }
+.cards {
+flex-direction: column;
+gap: 15px;
+}
 
-    .container__sobre{
-        margin-top: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 400px;
-        
-    }
-    .container{
-        gap: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .linha-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 2rem 0;
-        width:250px;
-      }
-      
-      .linha-ondulada {
-        width: 100%;
-        height: 100px;
-      }
+.card {
+padding: 15px;
+}
+
+.titulo {
+font-size: 2.2rem;
+}
+
+.descricao {
+font-size: 0.95rem;
+}
+
+.subtitulo {
+font-size: 1.3rem;
+}
+
+.tecnologias span {
+padding: 6px 12px;
+font-size: 0.9rem;
+}
+}
+
+@media (max-width: 480px) {
+.titulo {
+font-size: 1.8rem;
+}
+
+.descricao {
+font-size: 0.9rem;
+line-height: 1.4;
+}
+
+.subtitulo {
+font-size: 1.1rem;
+}
+
+.tecnologias span {
+font-size: 0.8rem;
+padding: 5px 10px;
+}
 }
