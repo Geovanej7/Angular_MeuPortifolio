@@ -1,5 +1,5 @@
 .sobre-container {
-  max-width: 160vh;
+  max-width: 130vh;
   margin: 0 auto;
   text-align: center;
   color: #f0f0f0;
@@ -9,8 +9,8 @@
 .titulo {
   font-size: 3.5rem;
   margin-bottom: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #00aaff; /* Azul em destaque */
+  font-family: 'orbitron';
+  color: #fff; /* Azul em destaque */
 }
 
 .descricao {
@@ -47,20 +47,20 @@
 }
 
 .subtitulo {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'orbitron';
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: #00aaff;
+  color: #fff;
   
 }
 
 .tecnologias span {
   display: inline-block;
-  background: #1f2937;
+  background: #111827;
   padding: 8px 16px;
   margin: 5px;
   border-radius: 8px;
-  color: #fff;
+  color: #00aaff;
   font-weight: 500;
   transition: transform 0.3s;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

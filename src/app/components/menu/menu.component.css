@@ -11,7 +11,8 @@
 
 .container__menu-bar > ul{
     display: flex;
-    gap: 15px; 
+    flex-direction: column;
+    gap: 45px; 
     padding: 0; 
 
 }
