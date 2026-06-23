@@ -1,6 +1,15 @@
-<a [href]="data.link" target="_blank" rel="noopener noreferrer">
-<div class="container__card">
-   <h1>{{data.title}}</h1> 
-   <p>{{data.description}}</p>
-</div>
-</a>
+<ng-container *ngIf="data.link; else cardSemLink">
+  <a [href]="data.link" target="_blank" rel="noopener noreferrer" [attr.aria-label]="data.title + ' — ver projeto no GitHub (abre em nova aba)'">
+    <div class="container__card">
+      <h2>{{data.title}}</h2>
+      <p>{{data.description}}</p>
+    </div>
+  </a>
+</ng-container>
+
+<ng-template #cardSemLink>
+  <div class="container__card container__card--em-breve">
+    <h2>{{data.title}}</h2>
+    <p>{{data.description}}</p>
+  </div>
+</ng-template>

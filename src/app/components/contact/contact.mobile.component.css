@@ -1,20 +1,19 @@
   
-  @media (max-width: 768px){
+@media (max-width: 768px) {
+  .container-form {
+    max-width: 320px;
+    background: linear-gradient(to bottom, #121212 0%, #131313 10%, #141414 15%, rgba(0, 123, 255, 0.5) 100%);
+  }
 
-    .container-form {
-    max-width: 300px;
-    background: linear-gradient(to bottom, #121212 0%, #131313 10%, #141414 15%, rgba(0, 123, 255, 0.5) 100%);/* opcional, se quiser um fundo */
-    }
-    .mensagem-sucesso {
-      font-size: 18px;
-     
-    }
+  .mensagem-sucesso {
+    font-size: 18px;
+  }
 
-    .mensagem-erro {
-      width: 300px;
-    }
-    
- .formulario-contato {
+  .mensagem-erro {
+    width: 100%;
+  }
+
+  .formulario-contato {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -23,55 +22,21 @@
     margin: 0 auto;
     padding: 16px;
   }
-  
+
+  .campo-wrapper {
+    width: 260px;
+  }
+
   .input-campo,
   .textarea-campo {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #3b82f6; 
-    color: white;
-    padding: 8px 4px;
-    font-size: 16px;
-    outline: none;
-    width: 250px;
+    width: 100%;
   }
-  
+
   .textarea-campo {
-    border: 1px solid #3b82f6;
-    border-radius: 8px;
-    resize: none;
     height: 150px;
-    padding: 8px;
   }
-  
+
   .botao-enviar {
-    width: 250px;
+    width: 260px;
   }
-  
-  @media  (max-width: 360px){
-    .input-campo,
-  .textarea-campo {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #3b82f6; 
-    color: white;
-    padding: 8px 4px;
-    font-size: 16px;
-    outline: none;
-    width: 250px;
-  }
-  
-  .textarea-campo {
-    border: 1px solid #3b82f6;
-    border-radius: 8px;
-    resize: none;
-    height: 160px;
-    padding: 8px;
-  }
-  
-  .botao-enviar {
-    width: 250px;
-    
-   }
- } 
 }

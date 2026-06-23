@@ -1,17 +1,39 @@
-<div class="container__menu-bar">
-  
-    <div class="menu-hamburger" (click)="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  
-    <ul [ngClass]="{'show': isMenuOpen}">
-      <button class="close__menu" (click)="toggleMenu()">X</button>
-      <li><a [routerLink]="['/']">Home</a></li>
-      <li><a [routerLink]="['/sobre']">Sobre</a></li>
-      <li><a [routerLink]="['/projetos']">Projetos</a></li>
-      <li><a [routerLink]="['/contato']">Contato</a></li>
+<nav class="container__menu-bar" aria-label="Navegação principal">
+
+  <button
+    class="menu-hamburger"
+    type="button"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="isMenuOpen"
+    aria-controls="main-nav"
+    aria-label="Abrir menu de navegação">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <div id="main-nav" class="nav-panel" [ngClass]="{'show': isMenuOpen}">
+    <button
+      class="close__menu"
+      type="button"
+      (click)="toggleMenu()"
+      aria-label="Fechar menu">
+      <span aria-hidden="true">✕</span>
+    </button>
+    <ul role="list">
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page">Home</a>
+      </li>
+      <li>
+        <a routerLink="/sobre" routerLinkActive="active" ariaCurrentWhenActive="page">Sobre</a>
+      </li>
+      <li>
+        <a routerLink="/projetos" routerLinkActive="active" ariaCurrentWhenActive="page">Projetos</a>
+      </li>
+      <li>
+        <a routerLink="/contato" routerLinkActive="active" ariaCurrentWhenActive="page">Contato</a>
+      </li>
     </ul>
-  
   </div>
+
+</nav>

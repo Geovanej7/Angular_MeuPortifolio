@@ -1,11 +1,27 @@
   
   .container-form {
-  border: 2px solid #00aaff;  /* cor e espessura */
-  border-radius: 12px;        /* cantos arredondados */
+  border: 2px solid #00aaff;
+  border-radius: 12px;
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
   background: #111827;
+}
+
+.campo-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 450px;
+}
+
+.campo-label {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted, #9ca3af);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
   .formulario-contato {
     display: flex;
@@ -80,8 +96,14 @@
     font-weight: bold;
     font-size: 22px;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
     margin-bottom: 12px;
+  }
+
+  .mensagem-sucesso h2 {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
   }
   
   .formulario-container {

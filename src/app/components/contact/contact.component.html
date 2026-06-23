@@ -1,44 +1,74 @@
 <div class="container-form">
-<!-- Loader -->
-<div *ngIf="isSending" class="loader"></div>
+  <!-- Loader -->
+  <div *ngIf="isSending" class="loader" role="status" aria-label="Enviando mensagem..."></div>
 
-<!-- Formulário -->
-<form
-  *ngIf="!isSending && showForm"
-  [formGroup]="contactForm"
-  (ngSubmit)="onSubmit()"
-  class="formulario-contato"
->
-  <!-- Email -->
-  <input type="email" placeholder="Seu email" formControlName="email" class="input-campo" />
-  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="mensagem-erro">
-    <span *ngIf="email.errors?.['required']">O email é obrigatório.</span>
-    <span *ngIf="email.errors?.['email']">Digite um email válido.</span>
+  <!-- Formulário -->
+  <form
+    *ngIf="!isSending && showForm"
+    [formGroup]="contactForm"
+    (ngSubmit)="onSubmit()"
+    class="formulario-contato"
+    novalidate
+  >
+    <div class="campo-wrapper">
+      <label for="email" class="campo-label">Email</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="seu@email.com"
+        formControlName="email"
+        class="input-campo"
+        autocomplete="email"
+        [attr.aria-invalid]="email.invalid && (email.dirty || email.touched)"
+        [attr.aria-describedby]="email.invalid && (email.dirty || email.touched) ? 'email-erro' : null"
+      />
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" id="email-erro" class="mensagem-erro" role="alert">
+        <span *ngIf="email.errors?.['required']">O email é obrigatório.</span>
+        <span *ngIf="email.errors?.['email']">Digite um email válido.</span>
+      </div>
+    </div>
+
+    <div class="campo-wrapper">
+      <label for="assunto" class="campo-label">Assunto</label>
+      <input
+        id="assunto"
+        type="text"
+        placeholder="Como posso ajudar?"
+        formControlName="assunto"
+        class="input-campo"
+        [attr.aria-invalid]="assunto.invalid && (assunto.dirty || assunto.touched)"
+        [attr.aria-describedby]="assunto.invalid && (assunto.dirty || assunto.touched) ? 'assunto-erro' : null"
+      />
+      <div *ngIf="assunto.invalid && (assunto.dirty || assunto.touched)" id="assunto-erro" class="mensagem-erro" role="alert">
+        <span *ngIf="assunto.errors?.['required']">O assunto é obrigatório.</span>
+      </div>
+    </div>
+
+    <div class="campo-wrapper">
+      <label for="mensagem" class="campo-label">Mensagem</label>
+      <textarea
+        id="mensagem"
+        placeholder="Escreva sua mensagem aqui..."
+        formControlName="mensagem"
+        class="textarea-campo"
+        [attr.aria-invalid]="mensagem.invalid && (mensagem.dirty || mensagem.touched)"
+        [attr.aria-describedby]="mensagem.invalid && (mensagem.dirty || mensagem.touched) ? 'mensagem-erro' : null"
+      ></textarea>
+      <div *ngIf="mensagem.invalid && (mensagem.dirty || mensagem.touched)" id="mensagem-erro" class="mensagem-erro" role="alert">
+        <span *ngIf="mensagem.errors?.['required']">A mensagem é obrigatória.</span>
+        <span *ngIf="mensagem.errors?.['minlength']">A mensagem deve ter no mínimo 10 caracteres.</span>
+      </div>
+    </div>
+
+    <button type="submit" class="botao-enviar">
+      Enviar mensagem
+    </button>
+  </form>
+
+  <!-- Mensagem de sucesso e contador -->
+  <div *ngIf="!showForm && !isSending && !canResend" class="mensagem-aguarde" role="status" aria-live="polite">
+    <div class="mensagem-sucesso"><h2>Mensagem enviada com sucesso!</h2></div>
+    <p>Para enviar outra mensagem, aguarde um momento.</p>
+    <div class="contador" aria-label="Tempo restante">{{ formatTime(countdown) }}</div>
   </div>
-
-  <!-- Assunto -->
-  <input type="text" placeholder="Assunto" formControlName="assunto" class="input-campo" />
-  <div *ngIf="assunto.invalid && (assunto.dirty || assunto.touched)" class="mensagem-erro">
-    <span *ngIf="assunto.errors?.['required']">O assunto é obrigatório.</span>
-  </div>
-
-  <!-- Mensagem -->
-  <textarea placeholder="Sua mensagem" formControlName="mensagem" class="textarea-campo"></textarea>
-  <div *ngIf="mensagem.invalid && (mensagem.dirty || mensagem.touched)" class="mensagem-erro">
-    <span *ngIf="mensagem.errors?.['required']">A mensagem é obrigatória.</span>
-    <span *ngIf="mensagem.errors?.['minlength']">A mensagem deve ter no mínimo 10 caracteres.</span>
-  </div>
-
-  <!-- botão -->
-  <button type="submit"  class="botao-enviar">
-    Enviar
-  </button>
-</form>
-
-<!-- Mensagem de sucesso e contador -->
-<div *ngIf="!showForm && !isSending && !canResend" class="mensagem-aguarde">
-  <div class="mensagem-sucesso"><h1>Mensagem enviada com sucesso!</h1></div>
-  <p>Para enviar outra mensagem aguarde um pouco</p>
-  <div class="contador">{{ formatTime(countdown) }}</div>
-</div>
 </div>
