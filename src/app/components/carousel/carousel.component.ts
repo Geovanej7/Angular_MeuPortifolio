@@ -1,4 +1,4 @@
-import { Component, HostListener  } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component'
 
@@ -9,32 +9,36 @@ import { CardComponent } from '../card/card.component'
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css','carousel.mobile.component.css']
 })
-export class CarouselComponent {
+export class CarouselComponent implements OnInit, OnDestroy {
 
   cards = [
-    { title: 'board de tarefas', link: 'https://github.com/Geovanej7/boards' , description: 'API Rest de um gerenciador de tarefas.'},
-    { title: 'Medi-App', link: 'https://github.com/Geovanej7/NodeJs-MediApp', description: 'Projeto de agendamento de cunsultas para um consultório médico' },
-    { title: 'Oxefood', link: 'https://github.com/Geovanej7/oxefood-api-geovane', description: 'API RESTfull construída em Java, que simula as funcionalidades básicas de um e-commerce.' },
-    { title: 'Catalogo Online', link: 'https://github.com/Geovanej7/React-Catalogo', description: 'Aplicação web desenvolvida em react, onde qualquer pessoa pode criar um catálogo virtual para expor seus produtos na internet.' },
-    { title: 'Em Breve', link: '', description: '...' }
+    { title: 'board de tarefas', link: 'https://github.com/Geovanej7/boards', description: 'API Rest de um gerenciador de tarefas.' },
+    { title: 'Medi-App', link: 'https://github.com/Geovanej7/NodeJs-MediApp', description: 'Projeto de agendamento de consultas para um consultório médico.' },
+    { title: 'Oxefood', link: 'https://github.com/Geovanej7/oxefood-api-geovane', description: 'API RESTfull construída em Java que simula as funcionalidades básicas de um e-commerce.' },
+    { title: 'Catálogo Online', link: 'https://github.com/Geovanej7/React-Catalogo', description: 'Aplicação web em React onde qualquer pessoa pode criar um catálogo virtual para expor produtos.' },
+    { title: 'Em Breve', link: '', description: 'Novo projeto em desenvolvimento...' }
   ];
-  index = 0;
-  cardsPerView = 2; // Padrão para desktop
-  totalSlides = 0;
 
-  constructor() {
-    this.updateSlides(); // Define o número inicial de slides
-  }
+  index = 0;
+  cardsPerView = 2;
+  totalSlides = 0;
+  private intervalId: ReturnType<typeof setInterval> | null = null;
 
   ngOnInit() {
-    setInterval(() => this.nextSlide(), 3000);
-    this.updateSlides(); // Garante que o primeiro cálculo ocorra
+    this.updateSlides();
+    this.intervalId = setInterval(() => this.nextSlide(), 3000);
   }
 
-  @HostListener('window:resize') // Atualiza quando a tela for redimensionada
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  @HostListener('window:resize')
   updateSlides() {
-    this.cardsPerView = window.innerWidth <= 768 ? 1 : 2; // 1 card por vez no mobile
-    this.totalSlides = Math.ceil(this.cards.length / this.cardsPerView); // Recalcula os slides
+    this.cardsPerView = window.innerWidth <= 768 ? 1 : 2;
+    this.totalSlides = Math.ceil(this.cards.length / this.cardsPerView);
   }
 
   nextSlide() {

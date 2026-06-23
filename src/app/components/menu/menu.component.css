@@ -1,49 +1,82 @@
-
+/* Desktop base — hamburger e botão fechar são ocultos */
 .container__menu-bar {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    margin-right: 190px;
-    
-
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  margin-right: 190px;
 }
 
-.container__menu-bar > ul{
-    display: flex;
-    flex-direction: column;
-    gap: 45px; 
-    padding: 0; 
-
-}
-.container__menu-bar > ul > li{
-   margin-right: 120px;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   font-weight: bold;
-   list-style: none;
-}
-.container__menu-bar ul > li > a {
-    text-decoration: none;
-    color: #EAEAEA;
-    font-size: 20px;
-    position: relative;
-    padding: 5px 0;
-}
-.container__menu-bar ul > li > a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
-    height: 2px;
-    background-color: #3b82f6; 
-    transition: width 0.5s ease-in-out;
+.menu-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 36px;
+  height: 30px;
+  padding: 0;
+  gap: 5px;
 }
 
-.container__menu-bar ul > li > a:hover::after {
-    width: 100%;
+.menu-hamburger .bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #EAEAEA;
+  border-radius: 4px;
+  transition: background-color 0.2s;
 }
 
-.container__menu-bar ul li a.active::after {
-    width: 100% !important;
+.menu-hamburger:hover .bar {
+  background-color: var(--color-accent, #3b82f6);
+}
+
+.nav-panel {
+  display: block;
+}
+
+.close__menu {
+  display: none;
+}
+
+.nav-panel > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-panel > ul > li {
+  margin-right: 120px;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-weight: 600;
+  list-style: none;
+}
+
+.nav-panel > ul > li > a {
+  text-decoration: none;
+  color: #EAEAEA;
+  font-size: 20px;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-panel > ul > li > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #3b82f6;
+  transition: width 0.5s ease-in-out;
+}
+
+.nav-panel > ul > li > a:hover::after,
+.nav-panel > ul > li > a.active::after {
+  width: 100%;
 }

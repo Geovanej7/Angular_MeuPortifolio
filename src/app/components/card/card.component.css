@@ -17,7 +17,7 @@
     background-color: #111827;
 }
 
-.container__card > h1{
+.container__card > h2{
     font-size: 50px;
     color: #EAEAEA;
     font-weight: bold;
@@ -37,7 +37,14 @@ a {
 
 .container__card:hover{
     transform: scale(1.0);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);  
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container__card--em-breve {
+    opacity: 0.5;
+    cursor: default;
+    animation: none;
+    border-style: dashed;
 }
 
 @keyframes glow-border {
